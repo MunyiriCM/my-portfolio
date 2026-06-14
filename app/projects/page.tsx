@@ -1,116 +1,82 @@
 export const metadata = {
   title: "Projects",
-  description:
-    "Projects built by Mark Munyiri — cybersecurity tools, web applications, and software development work.",
+  description: "Projects built by Mark Ciira — cybersecurity tools, web applications, and software development work.",
 };
 
 const projects = [
   {
     title: "Xtracker",
-    description:
-      "A secure full-stack expense tracking application. Built with Python and Django, featuring user authentication, expense categorization, and spending analytics. Demonstrates secure coding practices and full-stack Django development.",
+    description: "A secure full-stack expense tracking application. Built with Python and Django, featuring user authentication, expense categorization, and spending analytics. Demonstrates secure coding practices and full-stack Django development.",
     tags: ["Python", "Django", "PostgreSQL", "Security"],
     type: "Web App",
     status: "Live",
-    github: "https://github.com/",
+    github: "https://github.com/MunyiriCM",
     demo: "",
   },
   {
     title: "Personal Portfolio",
-    description:
-      "This website. Built with Next.js, TypeScript, and Tailwind CSS. Features a blog, projects showcase, contact form, and newsletter subscription. Deployed on Vercel.",
+    description: "This website. Built with Next.js, TypeScript, and Tailwind CSS. Features a blog, projects showcase, contact form, and newsletter subscription. Deployed on Vercel.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     type: "Web App",
     status: "Live",
-    github: "https://github.com/",
+    github: "https://github.com/MunyiriCM",
     demo: "",
   },
   {
     title: "Ecommerce Platform",
-    description:
-      "A full-stack ecommerce platform with product catalog, cart, checkout, and M-Pesa and Stripe payment integration. Built with Next.js on the frontend and Django REST Framework on the backend.",
+    description: "A full-stack ecommerce platform with product catalog, cart, checkout, and M-Pesa and Stripe payment integration. Built with Next.js on the frontend and Django REST Framework on the backend.",
     tags: ["Next.js", "Django REST", "PostgreSQL", "Stripe", "M-Pesa"],
     type: "Web App",
     status: "In Progress",
-    github: "https://github.com/",
+    github: "https://github.com/MunyiriCM",
     demo: "",
   },
 ];
 
-function getTypeColor(type: string): string {
-  if (type === "Web App") return "bg-blue-100 text-blue-700";
-  if (type === "Security Tool") return "bg-red-100 text-red-700";
-  return "bg-gray-100 text-gray-700";
-}
-
-function getStatusColor(status: string): string {
-  if (status === "Live") return "bg-green-100 text-green-700";
-  if (status === "In Progress") return "bg-yellow-100 text-yellow-700";
-  return "bg-gray-100 text-gray-500";
+function getStatusStyle(status: string) {
+  if (status === "Live") return { backgroundColor: "#0F2E2B", color: "#2DD4BF" };
+  if (status === "In Progress") return { backgroundColor: "#374151", color: "#F59E0B" };
+  return { backgroundColor: "#374151", color: "#9CA3AF" };
 }
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
 
-      {/* Header */}
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-4">Projects</h1>
-        <p className="text-gray-600 max-w-2xl">
-          A collection of things I have built — web applications, security
-          tools, and side projects. All source code is available on GitHub.
+      <section style={{ marginBottom: "64px" }}>
+        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Projects</h1>
+        <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+          A collection of things I have built — web applications, security tools, and side projects. All source code is available on GitHub.
         </p>
       </section>
 
-      {/* Projects Grid */}
       <section>
-        <div className="grid grid-cols-1 gap-6">
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           {projects.map((project) => (
-            <div
-              key={project.title}
-              className="border border-gray-200 rounded-xl p-6 hover:border-gray-400 transition-colors"
-            >
-              {/* Top row */}
-              <div className="flex items-start justify-between mb-3">
-                <h2 className="text-xl font-semibold">{project.title}</h2>
-                <div className="flex gap-2">
-                  <span className={`text-xs px-3 py-1 rounded-full ${getTypeColor(project.type)}`}>
-                    {project.type}
-                  </span>
-                  <span className={`text-xs px-3 py-1 rounded-full ${getStatusColor(project.status)}`}>
-                    {project.status}
-                  </span>
+            <div key={project.title} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+
+              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }}>
+                <h2 style={{ color: "#F9FAFB", fontSize: "1.2rem", fontWeight: "600" }}>{project.title}</h2>
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", backgroundColor: "#1A2744", color: "#60A5FA" }}>{project.type}</span>
+                  <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", ...getStatusStyle(project.status) }}>{project.status}</span>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                {project.description}
-              </p>
+              <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7", marginBottom: "16px" }}>{project.description}</p>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
+                  <span key={tag} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{tag}</span>
                 ))}
               </div>
 
-              {/* Links */}
-              <div className="flex gap-4">
+              <div style={{ display: "flex", gap: "16px" }}>
                 {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">
-                    GitHub →
-                  </a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>GitHub →</a>
                 )}
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">
-                    Live demo →
-                  </a>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>Live demo →</a>
                 )}
               </div>
 

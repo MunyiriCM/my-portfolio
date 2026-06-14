@@ -10,21 +10,17 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-
 export default function Navbar() {
   return (
-    <header className="border-b border-gray-200 py-4 px-6">
+    <header className="border-b border-gray-700 py-4 px-6 bg-gray-800">
       <nav className="max-w-4xl mx-auto flex items-center justify-between">
-        <Link href="/" className="font-semibold text-lg">
-          Mark Munyiri
+        <Link href="/" className="font-semibold text-lg text-white">
+          Mark Ciira
         </Link>
         <ul className="flex gap-6">
           {links.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm text-gray-600 hover:text-black transition-colors"
-              >
+              <Link href={link.href} className="text-sm text-gray-400 hover:text-teal-400 transition-colors">
                 {link.label}
               </Link>
             </li>

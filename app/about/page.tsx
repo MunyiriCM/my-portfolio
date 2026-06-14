@@ -2,173 +2,94 @@ import Link from "next/link";
 
 export const metadata = {
   title: "About",
-  description:
-    "Learn more about Mark Munyiri — cybersecurity engineer and software developer based in Nairobi, Kenya.",
+  description: "Learn more about Mark Ciira — cybersecurity engineer and software developer based in Nairobi, Kenya.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
 
-      {/* Intro */}
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-6">About me</h1>
-        <div className="max-w-2xl space-y-4 text-gray-600 leading-relaxed">
-          <p>
-            I'm Mark Ciira Munyiri, an IT Technical Support Engineer based in
-            Nairobi, Kenya. I'm currently deployed at Family Bank through Ariel
-            Technology Limited, where I work in network security and SOC
-            operations — monitoring over 1,500 endpoints and servers daily.
+      <section style={{ marginBottom: "64px" }}>
+        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "24px" }}>About me</h1>
+        <div style={{ maxWidth: "672px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8" }}>
+            I'm Mark Ciira Munyiri, an IT Technical Support Engineer based in Nairobi, Kenya. I'm currently deployed at Family Bank through Ariel Technology Limited, where I work in network security and SOC operations — monitoring over 1,500 endpoints and servers daily.
           </p>
-          <p>
-            I'm completing a BSc in Telecommunication and Information Technology
-            at Kenyatta University, and I hold an ISC2 Certified in
-            Cybersecurity (CC) credential alongside a CyberShujaa/Cisco Ethical
-            Hacker certification. I'm currently working toward CompTIA
-            Security+.
+          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8" }}>
+            I'm completing a BSc in Telecommunication and Information Technology at Kenyatta University, and I hold an ISC2 Certified in Cybersecurity (CC) credential alongside a CyberShujaa/Cisco Ethical Hacker certification. I'm currently working toward CompTIA Security+.
           </p>
-          <p>
-            Outside of security, I build web applications using Python, Django,
-            React, and Next.js. My personal project Xtracker is a secure
-            full-stack expense tracking app that I use as a portfolio piece to
-            demonstrate my development skills.
+          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8" }}>
+            Outside of security, I build web applications using Python, Django, React, and Next.js. My personal project Xtracker is a secure full-stack expense tracking app that I use as a portfolio piece to demonstrate my development skills.
           </p>
         </div>
       </section>
 
-      {/* Experience */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8">Experience</h2>
-        <div className="space-y-8">
-          <div className="border-l-2 border-gray-200 pl-6">
-            <div className="flex items-start justify-between mb-1">
-              <h3 className="font-semibold">IT Technical Support Engineer</h3>
-              <span className="text-sm text-gray-400">2023 — Present</span>
-            </div>
-            <p className="text-sm text-gray-500 mb-3">
-              Ariel Technology Limited · Deployed at Family Bank, Nairobi
-            </p>
-            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-              <li>SOC monitoring across 1,500+ endpoints and servers</li>
-              <li>Endpoint protection using Kaspersky Security Center EDR</li>
-              <li>CrowdStrike deployment and mutual exclusion configuration</li>
-              <li>Network security, firewall rule documentation</li>
-              <li>Incident response and technical troubleshooting</li>
-            </ul>
+      <section style={{ marginBottom: "64px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>Experience</h2>
+        <div style={{ borderLeft: "2px solid #374151", paddingLeft: "24px" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
+            <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "16px" }}>IT Technical Support Engineer</h3>
+            <span style={{ color: "#6B7280", fontSize: "14px" }}>2023 — Present</span>
           </div>
+          <p style={{ color: "#6B7280", fontSize: "14px", marginBottom: "12px" }}>Ariel Technology Limited · Deployed at Family Bank, Nairobi</p>
+          <ul style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "2", paddingLeft: "20px" }}>
+            <li>SOC monitoring across 1,500+ endpoints and servers</li>
+            <li>Endpoint protection using Kaspersky Security Center EDR</li>
+            <li>CrowdStrike deployment and mutual exclusion configuration</li>
+            <li>Network security, firewall rule documentation</li>
+            <li>Incident response and technical troubleshooting</li>
+          </ul>
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <div className="border border-gray-200 rounded-xl p-6">
-            <h3 className="font-semibold mb-4">Cybersecurity</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "SOC Operations",
-                "Endpoint Protection",
-                "Network Security",
-                "Kaspersky EDR",
-                "CrowdStrike",
-                "Splunk",
-                "Incident Response",
-                "Ethical Hacking",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
-                >
-                  {skill}
-                </span>
+      <section style={{ marginBottom: "64px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>Skills</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+            <h3 style={{ color: "#F9FAFB", fontWeight: "600", marginBottom: "16px" }}>Cybersecurity</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {["SOC Operations", "Endpoint Protection", "Network Security", "Kaspersky EDR", "CrowdStrike", "Splunk", "Incident Response", "Ethical Hacking"].map((skill) => (
+                <span key={skill} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
               ))}
             </div>
           </div>
-
-          <div className="border border-gray-200 rounded-xl p-6">
-            <h3 className="font-semibold mb-4">Development</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Python",
-                "Django",
-                "Django REST Framework",
-                "React",
-                "Next.js",
-                "TypeScript",
-                "PostgreSQL",
-                "Tailwind CSS",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
-                >
-                  {skill}
-                </span>
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+            <h3 style={{ color: "#F9FAFB", fontWeight: "600", marginBottom: "16px" }}>Development</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {["Python", "Django", "Django REST Framework", "React", "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"].map((skill) => (
+                <span key={skill} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8">Certifications</h2>
-        <div className="space-y-4">
-          <div className="border border-gray-200 rounded-xl p-6 flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">ISC2 Certified in Cybersecurity (CC)</h3>
-              <p className="text-sm text-gray-500">ISC2</p>
+      <section style={{ marginBottom: "64px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>Certifications</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          {[
+            { name: "ISC2 Certified in Cybersecurity (CC)", org: "ISC2", status: "Active" },
+            { name: "CyberShujaa / Cisco Ethical Hacker", org: "CyberShujaa · Cisco", status: "Active" },
+            { name: "CompTIA Security+", org: "CompTIA", status: "In Progress" },
+            { name: "ALX Back-End Web Development", org: "ALX Africa", status: "Completed" },
+          ].map((cert) => (
+            <div key={cert.name} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px 24px", backgroundColor: "#1F2937", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div>
+                <h3 style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>{cert.name}</h3>
+                <p style={{ color: "#6B7280", fontSize: "13px" }}>{cert.org}</p>
+              </div>
+              <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#2DD4BF", whiteSpace: "nowrap" }}>
+                {cert.status}
+              </span>
             </div>
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
-              Active
-            </span>
-          </div>
-          <div className="border border-gray-200 rounded-xl p-6 flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">CyberShujaa / Cisco Ethical Hacker</h3>
-              <p className="text-sm text-gray-500">CyberShujaa · Cisco</p>
-            </div>
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
-              Active
-            </span>
-          </div>
-          <div className="border border-gray-200 rounded-xl p-6 flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">CompTIA Security+</h3>
-              <p className="text-sm text-gray-500">CompTIA</p>
-            </div>
-            <span className="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">
-              In progress
-            </span>
-          </div>
-          <div className="border border-gray-200 rounded-xl p-6 flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">ALX Back-End Web Development</h3>
-              <p className="text-sm text-gray-500">ALX Africa</p>
-            </div>
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
-              Completed
-            </span>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-50 rounded-2xl p-10 text-center">
-        <h2 className="text-2xl font-semibold mb-3">Want to work together?</h2>
-        <p className="text-gray-600 mb-6 max-w-md mx-auto">
-          I'm open to cybersecurity roles, freelance web projects, and
-          technical collaborations.
-        </p>
-        <Link
-          href="/contact"
-          className="bg-black text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-        >
-          Get in touch
-        </Link>
+      <section style={{ backgroundColor: "#1F2937", border: "1px solid #374151", borderRadius: "16px", padding: "48px", textAlign: "center" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "12px" }}>Want to work together?</h2>
+        <p style={{ color: "#9CA3AF", marginBottom: "24px" }}>I'm open to cybersecurity roles, freelance web projects, and technical collaborations.</p>
+        <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Get in touch</Link>
       </section>
 
     </div>

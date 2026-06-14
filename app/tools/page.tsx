@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Tools",
-  description: "Tools, software, and equipment used by Mark Munyiri day to day.",
+  description: "Tools, software, and equipment used by Mark Ciira day to day.",
 };
 
 const tools = [
@@ -51,26 +51,26 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
 
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-4">Tools</h1>
-        <p className="text-gray-600 max-w-2xl">
-          The tools, platforms, and technologies I use day to day for
-          cybersecurity work, software development, and learning. Updated
-          as my stack evolves.
+      <section style={{ marginBottom: "64px" }}>
+        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Tools</h1>
+        <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+          The tools, platforms, and technologies I use day to day for cybersecurity work, software development, and learning. Updated as my stack evolves.
         </p>
       </section>
 
-      <div className="space-y-16">
+      <div style={{ display: "flex", flexDirection: "column", gap: "64px" }}>
         {tools.map((group) => (
           <section key={group.category}>
-            <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">{group.category}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>
+              {group.category}
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
               {group.items.map((tool) => (
-                <div key={tool.name} className="border border-gray-200 rounded-xl p-5 hover:border-gray-400 transition-colors">
-                  <h3 className="font-semibold text-sm mb-2">{tool.name}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{tool.description}</p>
+                <div key={tool.name} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
+                  <h3 style={{ color: "#2DD4BF", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
+                  <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{tool.description}</p>
                 </div>
               ))}
             </div>

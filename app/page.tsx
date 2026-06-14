@@ -4,90 +4,66 @@ export default function Home() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-20">
 
-      {/* Hero Section */}
       <section className="mb-20">
-        <p className="text-sm text-gray-500 mb-3">Based in Nairobi, Kenya</p>
-        <h1 className="text-4xl font-bold mb-6">
-          Hi, I'm Mark Munyiri
+        <p style={{ color: "#2DD4BF", fontSize: "14px", marginBottom: "12px" }}>Based in Nairobi, Kenya</p>
+        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "24px" }}>
+          Hi, I'm Mark Ciira
         </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl">
+        <p style={{ color: "#9CA3AF", fontSize: "1.2rem", marginBottom: "32px", maxWidth: "600px", lineHeight: "1.7" }}>
           Cybersecurity engineer and software developer. I protect systems,
           build web applications, and write about what I learn along the way.
         </p>
-        <div className="flex gap-4">
-          <Link
-            href="/projects"
-            className="bg-black text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-          >
+        <div style={{ display: "flex", gap: "16px" }}>
+          <Link href="/projects" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
             View my work
           </Link>
-          <Link
-            href="/contact"
-            className="border border-gray-300 px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
-          >
+          <Link href="/contact" style={{ border: "1px solid #0F766E", color: "#2DD4BF", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
             Get in touch
           </Link>
         </div>
       </section>
 
-      {/* What I Do Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-semibold mb-8">What I do</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="border border-gray-200 rounded-xl p-6">
-            <h3 className="font-semibold mb-2">Cybersecurity</h3>
-            <p className="text-sm text-gray-600">
-              SOC monitoring, endpoint protection, network security, and
-              incident response. Currently securing 1,500+ endpoints at
-              Family Bank.
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>What I do</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+            <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Cybersecurity</h3>
+            <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.6" }}>
+              SOC monitoring, endpoint protection, network security, and incident response. Currently securing 1,500+ endpoints at Family Bank.
             </p>
           </div>
-          <div className="border border-gray-200 rounded-xl p-6">
-            <h3 className="font-semibold mb-2">Software Development</h3>
-            <p className="text-sm text-gray-600">
-              Full-stack web development using Python, Django, React, and
-              Next.js. I build secure, practical applications.
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+            <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Software Development</h3>
+            <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.6" }}>
+              Full-stack web development using Python, Django, React, and Next.js. I build secure, practical applications.
             </p>
           </div>
-          <div className="border border-gray-200 rounded-xl p-6">
-            <h3 className="font-semibold mb-2">IT Support</h3>
-            <p className="text-sm text-gray-600">
-              Technical support, infrastructure management, and system
-              administration in enterprise banking environments.
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+            <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>IT Support</h3>
+            <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.6" }}>
+              Technical support, infrastructure management, and system administration in enterprise banking environments.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Recent Blog Posts Section */}
       <section className="mb-20">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-semibold">Recent posts</h2>
-          <Link href="/blog" className="text-sm text-gray-500 hover:text-black transition-colors">
-            View all →
-          </Link>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px" }}>
+          <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600" }}>Recent posts</h2>
+          <Link href="/blog" style={{ color: "#9CA3AF", fontSize: "14px", textDecoration: "none" }}>View all →</Link>
         </div>
-        <div className="space-y-4">
-          <div className="border border-gray-200 rounded-xl p-6">
-            <p className="text-xs text-gray-400 mb-2">Coming soon</p>
-            <h3 className="font-medium text-gray-400">
-              Blog posts will appear here once connected to Sanity CMS
-            </h3>
-          </div>
+        <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+          <p style={{ color: "#6B7280", fontSize: "12px", marginBottom: "8px" }}>Coming soon</p>
+          <h3 style={{ color: "#6B7280", fontWeight: "500" }}>Blog posts will appear here once connected to Sanity CMS</h3>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gray-50 rounded-2xl p-10 text-center">
-        <h2 className="text-2xl font-semibold mb-3">Let's work together</h2>
-        <p className="text-gray-600 mb-6 max-w-md mx-auto">
-          Open to cybersecurity roles, freelance web development projects,
-          and technical collaborations.
+      <section style={{ backgroundColor: "#1F2937", border: "1px solid #374151", borderRadius: "16px", padding: "48px", textAlign: "center" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "12px" }}>Let's work together</h2>
+        <p style={{ color: "#9CA3AF", marginBottom: "24px", maxWidth: "400px", margin: "0 auto 24px" }}>
+          Open to cybersecurity roles, freelance web development projects, and technical collaborations.
         </p>
-        <Link
-          href="/contact"
-          className="bg-black text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-        >
+        <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
           Contact me
         </Link>
       </section>

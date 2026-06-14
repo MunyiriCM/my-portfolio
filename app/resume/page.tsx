@@ -1,44 +1,51 @@
 export const metadata = {
   title: "Resume",
-  description: "Resume of Mark Munyiri — cybersecurity engineer and software developer based in Nairobi, Kenya.",
+  description: "Resume of Mark Ciira — cybersecurity engineer and software developer based in Nairobi, Kenya.",
+};
+
+const tagStyle = {
+  fontSize: "12px",
+  backgroundColor: "#374151",
+  color: "#2DD4BF",
+  padding: "4px 12px",
+  borderRadius: "20px",
 };
 
 export default function ResumePage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
 
-      <div className="flex items-start justify-between mb-16">
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "48px" }}>
         <div>
-          <h1 className="text-4xl font-bold mb-2">Mark Ciira Munyiri</h1>
-          <p className="text-gray-600 mb-1">Cybersecurity Engineer · Software Developer</p>
-          <p className="text-gray-500 text-sm">Nairobi, Kenya</p>
+          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "8px" }}>Mark Ciira Munyiri</h1>
+          <p style={{ color: "#9CA3AF", fontSize: "16px", marginBottom: "4px" }}>Cybersecurity Engineer · Software Developer</p>
+          <p style={{ color: "#6B7280", fontSize: "14px" }}>Nairobi, Kenya</p>
         </div>
-        <a href="/mark-munyiri-cv.pdf" download className="bg-black text-white px-5 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">Download PDF</a>
+        <a href="/mark-munyiri-cv.pdf" download style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Download PDF</a>
       </div>
 
-      <section className="mb-12 flex flex-wrap gap-6 text-sm text-gray-600">
-        <span>mmunyiri12@gmail.com</span>
-        <span>linkedin.com/in/markmunyiri</span>
-        <span>github.com/markmunyiri</span>
-        <span>markmunyiri.dev</span>
+      <section style={{ marginBottom: "40px", display: "flex", flexWrap: "wrap", gap: "24px" }}>
+        {["mmunyiri12@gmail.com", "linkedin.com/in/markmunyiri", "github.com/MunyiriCM", "markciira.com"].map((item) => (
+          <span key={item} style={{ color: "#9CA3AF", fontSize: "14px" }}>{item}</span>
+        ))}
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200">Summary</h2>
-        <p className="text-gray-600 leading-relaxed">
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "16px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Summary</h2>
+        <p style={{ color: "#9CA3AF", fontSize: "15px", lineHeight: "1.8" }}>
           IT Technical Support Engineer with hands-on experience in SOC operations, endpoint security, and network monitoring in a live banking environment. Currently securing 1,500+ endpoints at Family Bank through Ariel Technology Limited. Holds ISC2 CC and CyberShujaa/Cisco Ethical Hacker certifications, with CompTIA Security+ in progress. Also builds full-stack web applications using Python, Django, React, and Next.js.
         </p>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">Experience</h2>
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Experience</h2>
         <div>
-          <div className="flex items-start justify-between mb-1">
-            <h3 className="font-semibold">IT Technical Support Engineer</h3>
-            <span className="text-sm text-gray-400">2023 — Present</span>
+          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
+            <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "16px" }}>IT Technical Support Engineer</h3>
+            <span style={{ color: "#6B7280", fontSize: "13px" }}>2023 — Present</span>
           </div>
-          <p className="text-sm text-gray-500 mb-3">Ariel Technology Limited · Deployed at Family Bank, Nairobi</p>
-          <ul className="text-sm text-gray-600 space-y-2 list-disc list-inside">
+          <p style={{ color: "#6B7280", fontSize: "14px", marginBottom: "12px" }}>Ariel Technology Limited · Deployed at Family Bank, Nairobi</p>
+          <ul style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "2", paddingLeft: "20px" }}>
             <li>SOC monitoring across 1,500+ endpoints and servers daily</li>
             <li>Endpoint protection and threat management using Kaspersky Security Center EDR</li>
             <li>Deployed CrowdStrike alongside Kaspersky with mutual exclusion configuration</li>
@@ -49,87 +56,81 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">Education</h2>
-        <div className="space-y-6">
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Education</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <div>
-            <div className="flex items-start justify-between mb-1">
-              <h3 className="font-semibold">BSc Telecommunication and Information Technology</h3>
-              <span className="text-sm text-gray-400">Expected 2026</span>
+            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
+              <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px" }}>BSc Telecommunication and Information Technology</h3>
+              <span style={{ color: "#6B7280", fontSize: "13px" }}>Expected 2026</span>
             </div>
-            <p className="text-sm text-gray-500">Kenyatta University, Nairobi</p>
+            <p style={{ color: "#6B7280", fontSize: "14px" }}>Kenyatta University, Nairobi</p>
           </div>
           <div>
-            <div className="flex items-start justify-between mb-1">
-              <h3 className="font-semibold">ALX Back-End Web Development</h3>
-              <span className="text-sm text-gray-400">Completed</span>
+            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
+              <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px" }}>ALX Back-End Web Development</h3>
+              <span style={{ color: "#6B7280", fontSize: "13px" }}>Completed</span>
             </div>
-            <p className="text-sm text-gray-500">ALX Africa</p>
+            <p style={{ color: "#6B7280", fontSize: "14px" }}>ALX Africa</p>
           </div>
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">Certifications</h2>
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-medium text-sm">ISC2 Certified in Cybersecurity (CC)</p>
-              <p className="text-xs text-gray-500">ISC2</p>
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Certifications</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          {[
+            { name: "ISC2 Certified in Cybersecurity (CC)", org: "ISC2", status: "Active" },
+            { name: "CyberShujaa / Cisco Ethical Hacker", org: "CyberShujaa · Cisco", status: "Active" },
+            { name: "CompTIA Security+", org: "CompTIA", status: "In Progress" },
+          ].map((cert) => (
+            <div key={cert.name} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "16px 20px", backgroundColor: "#1F2937", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div>
+                <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>{cert.name}</p>
+                <p style={{ color: "#6B7280", fontSize: "13px" }}>{cert.org}</p>
+              </div>
+              <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#2DD4BF", whiteSpace: "nowrap" }}>
+                {cert.status}
+              </span>
             </div>
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Active</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-medium text-sm">CyberShujaa / Cisco Ethical Hacker</p>
-              <p className="text-xs text-gray-500">CyberShujaa · Cisco</p>
-            </div>
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Active</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-medium text-sm">CompTIA Security+</p>
-              <p className="text-xs text-gray-500">CompTIA</p>
-            </div>
-            <span className="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">In Progress</span>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section style={{ marginBottom: "48px" }}>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Skills</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
           <div>
-            <h3 className="text-sm font-semibold mb-3 text-gray-700">Cybersecurity</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 style={{ color: "#9CA3AF", fontSize: "13px", fontWeight: "600", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Cybersecurity</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
               {["SOC Operations", "Endpoint Protection", "Network Security", "Kaspersky EDR", "CrowdStrike", "Splunk", "Incident Response", "Ethical Hacking"].map((skill) => (
-                <span key={skill} className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">{skill}</span>
+                <span key={skill} style={tagStyle}>{skill}</span>
               ))}
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-3 text-gray-700">Development</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 style={{ color: "#9CA3AF", fontSize: "13px", fontWeight: "600", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Development</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
               {["Python", "Django", "Django REST Framework", "React", "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"].map((skill) => (
-                <span key={skill} className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">{skill}</span>
+                <span key={skill} style={tagStyle}>{skill}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-6 pb-2 border-b border-gray-200">References</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border border-gray-200 rounded-xl p-5">
-            <p className="font-medium text-sm mb-1">Samwel Wamui</p>
-            <p className="text-xs text-gray-500 mb-1">Cybersecurity Engineer</p>
-            <p className="text-xs text-gray-500">NTT DATA</p>
+      <section>
+        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>References</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
+            <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>Samwel Wamui</p>
+            <p style={{ color: "#6B7280", fontSize: "13px", marginBottom: "2px" }}>Cybersecurity Engineer</p>
+            <p style={{ color: "#6B7280", fontSize: "13px" }}>NTT DATA</p>
           </div>
-          <div className="border border-gray-200 rounded-xl p-5">
-            <p className="font-medium text-sm mb-1">Emmanuel Simiyu Wamalwa</p>
-            <p className="text-xs text-gray-500 mb-1">Software Engineer</p>
-            <p className="text-xs text-gray-500">Family Bank Limited</p>
+          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
+            <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>Emmanuel Simiyu Wamalwa</p>
+            <p style={{ color: "#6B7280", fontSize: "13px", marginBottom: "2px" }}>Software Engineer</p>
+            <p style={{ color: "#6B7280", fontSize: "13px" }}>Family Bank Limited</p>
           </div>
         </div>
       </section>

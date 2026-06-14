@@ -35,113 +35,102 @@ export default function ContactPage() {
     }
   }
 
+  const inputStyle = {
+    width: "100%",
+    backgroundColor: "#111827",
+    border: "1px solid #374151",
+    borderRadius: "8px",
+    padding: "12px 16px",
+    fontSize: "14px",
+    color: "#F9FAFB",
+    outline: "none",
+    boxSizing: "border-box" as const,
+  };
+
+  const labelStyle = {
+    display: "block",
+    fontSize: "14px",
+    fontWeight: "500" as const,
+    color: "#9CA3AF",
+    marginBottom: "8px",
+  };
+
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-4">Get in touch</h1>
-        <p className="text-gray-600 max-w-2xl">
-          Open to cybersecurity roles, freelance web development projects, and
-          technical collaborations. Fill in the form and I will get back to you
-          as soon as possible.
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
+
+      <section style={{ marginBottom: "64px" }}>
+        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Get in touch</h1>
+        <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+          Open to cybersecurity roles, freelance web development projects, and technical collaborations. Fill in the form and I will get back to you as soon as possible.
         </p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="space-y-6">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "64px" }}>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
           <div>
-            <h2 className="font-semibold mb-1">Email</h2>
-            <p className="text-sm text-gray-600">mmunyiri12@gmail.com</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>Email</h2>
+            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>mmunyiri12@gmail.com</p>
           </div>
           <div>
-            <h2 className="font-semibold mb-1">Location</h2>
-            <p className="text-sm text-gray-600">Nairobi, Kenya</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>Location</h2>
+            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>Nairobi, Kenya</p>
           </div>
           <div>
-            <h2 className="font-semibold mb-1">LinkedIn</h2>
-            <p className="text-sm text-gray-600">linkedin.com/in/markmunyiri</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>LinkedIn</h2>
+            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>linkedin.com/in/markmunyiri</p>
           </div>
           <div>
-            <h2 className="font-semibold mb-1">GitHub</h2>
-            <p className="text-sm text-gray-600">github.com/markmunyiri</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>GitHub</h2>
+            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>github.com/MunyiriCM</p>
           </div>
         </div>
 
-        <div className="md:col-span-2">
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-400 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-400 transition-colors"
-                />
-              </div>
-            </div>
-
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             <div>
-              <label className="block text-sm font-medium mb-2">Subject</label>
-              <select
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-400 transition-colors"
-              >
-                <option value="">Select a subject</option>
-                <option value="Job Opportunity">Job opportunity</option>
-                <option value="Freelance Project">Freelance project</option>
-                <option value="Collaboration">Collaboration</option>
-                <option value="General Enquiry">General enquiry</option>
-              </select>
+              <label style={labelStyle}>Name</label>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" style={inputStyle} />
             </div>
-
             <div>
-              <label className="block text-sm font-medium mb-2">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell me about your project or enquiry..."
-                rows={6}
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gray-400 transition-colors resize-none"
-              />
+              <label style={labelStyle}>Email</label>
+              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" style={inputStyle} />
             </div>
-
-            {status === "success" && (
-              <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg px-4 py-3 text-sm">
-                Message sent successfully. I will get back to you soon.
-              </div>
-            )}
-
-            {status === "error" && (
-              <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
-                Something went wrong. Please try again or email me directly.
-              </div>
-            )}
-
-            <button
-              onClick={handleSubmit}
-              disabled={status === "loading"}
-              className="w-full bg-black text-white py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status === "loading" ? "Sending..." : "Send message"}
-            </button>
           </div>
+
+          <div>
+            <label style={labelStyle}>Subject</label>
+            <select name="subject" value={formData.subject} onChange={handleChange} style={{ ...inputStyle, cursor: "pointer" }}>
+              <option value="" style={{ backgroundColor: "#111827" }}>Select a subject</option>
+              <option value="Job Opportunity" style={{ backgroundColor: "#111827" }}>Job opportunity</option>
+              <option value="Freelance Project" style={{ backgroundColor: "#111827" }}>Freelance project</option>
+              <option value="Collaboration" style={{ backgroundColor: "#111827" }}>Collaboration</option>
+              <option value="General Enquiry" style={{ backgroundColor: "#111827" }}>General enquiry</option>
+            </select>
+          </div>
+
+          <div>
+            <label style={labelStyle}>Message</label>
+            <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your project or enquiry..." rows={6} style={{ ...inputStyle, resize: "none" }} />
+          </div>
+
+          {status === "success" && (
+            <div style={{ backgroundColor: "#0F2E2B", border: "1px solid #0F766E", borderRadius: "8px", padding: "12px 16px", color: "#2DD4BF", fontSize: "14px" }}>
+              Message sent successfully. I will get back to you soon.
+            </div>
+          )}
+
+          {status === "error" && (
+            <div style={{ backgroundColor: "#2D1515", border: "1px solid #7F1D1D", borderRadius: "8px", padding: "12px 16px", color: "#FCA5A5", fontSize: "14px" }}>
+              Something went wrong. Please try again or email me directly.
+            </div>
+          )}
+
+          <button onClick={handleSubmit} disabled={status === "loading"} style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "14px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", border: "none", cursor: status === "loading" ? "not-allowed" : "pointer", opacity: status === "loading" ? 0.6 : 1 }}>
+            {status === "loading" ? "Sending..." : "Send message"}
+          </button>
         </div>
+
       </div>
     </div>
   );
