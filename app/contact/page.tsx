@@ -56,7 +56,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
 
       <section style={{ marginBottom: "64px" }}>
         <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Get in touch</h1>
@@ -77,12 +77,12 @@ export default function ContactPage() {
             <p style={{ color: "#9CA3AF", fontSize: "14px" }}>Nairobi, Kenya</p>
           </div>
           <div>
-            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>LinkedIn</h2>
-            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>linkedin.com/in/markmunyiri</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "10px" }}>LinkedIn</h2>
+            <a href="https://linkedin.com/in/markmunyiri" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#0A66C2", color: "#ffffff", padding: "8px 16px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>Visit LinkedIn ↗</a>
           </div>
           <div>
-            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>GitHub</h2>
-            <p style={{ color: "#9CA3AF", fontSize: "14px" }}>github.com/MunyiriCM</p>
+            <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "10px" }}>GitHub</h2>
+            <a href="https://github.com/MunyiriCM" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#374151", color: "#F9FAFB", padding: "8px 16px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>Visit GitHub ↗</a>
           </div>
         </div>
 

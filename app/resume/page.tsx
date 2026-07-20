@@ -13,9 +13,9 @@ const tagStyle = {
 
 export default function ResumePage() {
   return (
-    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
 
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "48px" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "32px" }}>
         <div>
           <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "8px" }}>Mark Ciira Munyiri</h1>
           <p style={{ color: "#9CA3AF", fontSize: "16px", marginBottom: "4px" }}>Cybersecurity Engineer · Software Developer</p>
@@ -24,10 +24,11 @@ export default function ResumePage() {
         <a href="/mark-munyiri-cv.pdf" download style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Download PDF</a>
       </div>
 
-      <section style={{ marginBottom: "40px", display: "flex", flexWrap: "wrap", gap: "24px" }}>
-        {["mmunyiri12@gmail.com", "linkedin.com/in/markmunyiri", "github.com/MunyiriCM", "markciira.com"].map((item) => (
-          <span key={item} style={{ color: "#9CA3AF", fontSize: "14px" }}>{item}</span>
-        ))}
+      <section style={{ marginBottom: "40px", display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+        <span style={{ color: "#9CA3AF", fontSize: "14px" }}>mmunyiri12@gmail.com</span>
+        <span style={{ color: "#9CA3AF", fontSize: "14px" }}>markciira.com</span>
+        <a href="https://linkedin.com/in/markmunyiri" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#0A66C2", color: "#ffffff", padding: "6px 14px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>LinkedIn ↗</a>
+        <a href="https://github.com/MunyiriCM" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#374151", color: "#F9FAFB", padding: "6px 14px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>GitHub ↗</a>
       </section>
 
       <section style={{ marginBottom: "48px" }}>
@@ -97,7 +98,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section style={{ marginBottom: "48px" }}>
+      <section>
         <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>Skills</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
           <div>
@@ -115,22 +116,6 @@ export default function ResumePage() {
                 <span key={skill} style={tagStyle}>{skill}</span>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>References</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
-          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
-            <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>Samwel Wamui</p>
-            <p style={{ color: "#6B7280", fontSize: "13px", marginBottom: "2px" }}>Cybersecurity Engineer</p>
-            <p style={{ color: "#6B7280", fontSize: "13px" }}>NTT DATA</p>
-          </div>
-          <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
-            <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>Emmanuel Simiyu Wamalwa</p>
-            <p style={{ color: "#6B7280", fontSize: "13px", marginBottom: "2px" }}>Software Engineer</p>
-            <p style={{ color: "#6B7280", fontSize: "13px" }}>Family Bank Limited</p>
           </div>
         </div>
       </section>
