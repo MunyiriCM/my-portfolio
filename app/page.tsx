@@ -140,15 +140,15 @@ export default function Home() {
         <section style={{ marginBottom: "80px" }}>
           <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>What I do</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
-            <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
               <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Cybersecurity</h3>
               <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>SOC monitoring, endpoint protection, network security, and incident response. Currently securing 1,500+ endpoints at Family Bank.</p>
             </div>
-            <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
               <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Software Development</h3>
               <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>Full-stack web development using Python, Django, React, and Next.js. I build secure, practical applications.</p>
             </div>
-            <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
               <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>IT Support</h3>
               <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>Technical support, infrastructure management, and system administration in enterprise banking environments.</p>
             </div>
@@ -158,7 +158,7 @@ export default function Home() {
         <section style={{ marginBottom: "80px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px" }}>
             <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600" }}>Recent posts</h2>
-            <Link href="/blog" style={{ color: "#9CA3AF", fontSize: "14px", textDecoration: "none" }}>View all →</Link>
+            <Link href="/blog" className="hover-link" style={{ color: "#9CA3AF", fontSize: "14px", textDecoration: "none" }}>View all →</Link>
           </div>
           {posts.length === 0 ? (
             <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
@@ -168,7 +168,7 @@ export default function Home() {
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {posts.map((post) => (
                 <Link key={post._id} href={`/blog/${post.slug.current}`} style={{ textDecoration: "none" }}>
-                  <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                  <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
                     <p style={{ color: "#6B7280", fontSize: "12px", marginBottom: "8px" }}>{formatDate(post.publishedAt)}</p>
                     <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>{post.title}</h3>
                     {post.excerpt && <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.6" }}>{post.excerpt}</p>}

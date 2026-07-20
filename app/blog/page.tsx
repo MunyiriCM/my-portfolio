@@ -49,8 +49,7 @@ export default async function BlogPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {posts.map((post) => (
               <Link key={post._id} href={`/blog/${post.slug.current}`} style={{ textDecoration: "none" }}>
-                <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937", cursor: "pointer" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
+                <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937", cursor: "pointer" }}>                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
                     <span style={{ color: "#6B7280", fontSize: "13px" }}>{formatDate(post.publishedAt)}</span>
                     {post.readTime && (
                       <>
@@ -66,8 +65,8 @@ export default async function BlogPage() {
                   {post.tags && post.tags.length > 0 && (
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                       {post.tags.map((tag) => (
-                        <span key={tag} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{tag}</span>
-                      ))}
+                        <span key={tag} className="hover-tag" style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{tag}</span>
+                        ))}
                     </div>
                   )}
                 </div>

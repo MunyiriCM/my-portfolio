@@ -53,8 +53,7 @@ export default function ProjectsPage() {
       <section>
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           {projects.map((project) => (
-            <div key={project.title} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
-
+            <div key={project.title} className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }}>
                 <h2 style={{ color: "#F9FAFB", fontSize: "1.2rem", fontWeight: "600" }}>{project.title}</h2>
                 <div style={{ display: "flex", gap: "8px" }}>
@@ -73,8 +72,7 @@ export default function ProjectsPage() {
 
               <div style={{ display: "flex", gap: "16px" }}>
                 {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>GitHub →</a>
-                )}
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover-link" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>GitHub →</a>                )}
                 {project.demo && (
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>Live demo →</a>
                 )}

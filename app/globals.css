@@ -46,3 +46,34 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0F766E;
 }
+
+.hover-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  border-color: #0F766E !important;
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.15);
+}
+
+.hover-tag {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.hover-tag:hover {
+  background-color: #0F766E !important;
+  color: #F9FAFB !important;
+}
+
+.hover-link {
+  transition: color 0.15s ease, gap 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hover-link:hover {
+  color: #2DD4BF !important;
+  gap: 8px;
+}
