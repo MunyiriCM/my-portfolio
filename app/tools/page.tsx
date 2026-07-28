@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 export const metadata = {
   title: "Tools",
   description: "Tools, software, and equipment used by Mark Ciira day to day.",
@@ -51,30 +53,34 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
 
-      <section style={{ marginBottom: "64px" }}>
-        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Tools</h1>
-        <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
-          The tools, platforms, and technologies I use day to day for cybersecurity work, software development, and learning. Updated as my stack evolves.
-        </p>
-      </section>
+      <Reveal>
+        <section style={{ marginBottom: "64px" }}>
+          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Tools</h1>
+          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+            The tools, platforms, and technologies I use day to day for cybersecurity work, software development, and learning. Updated as my stack evolves.
+          </p>
+        </section>
+      </Reveal>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "64px" }}>
-        {tools.map((group) => (
-          <section key={group.category}>
-            <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>
-              {group.category}
-            </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
-              {group.items.map((tool) => (
-                <div key={tool.name} style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
-                  <h3 style={{ color: "#2DD4BF", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
-                  <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{tool.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+        {tools.map((group, gi) => (
+          <Reveal key={group.category} delay={gi * 50}>
+            <section>
+              <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>
+                {group.category}
+              </h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
+                {group.items.map((tool) => (
+                  <div key={tool.name} className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
+                    <h3 style={{ color: "#2DD4BF", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
+                    <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{tool.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </Reveal>
         ))}
       </div>
 

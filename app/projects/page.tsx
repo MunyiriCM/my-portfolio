@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 export const metadata = {
   title: "Projects",
   description: "Projects built by Mark Ciira — cybersecurity tools, web applications, and software development work.",
@@ -41,44 +43,50 @@ function getStatusStyle(status: string) {
 
 export default function ProjectsPage() {
   return (
-    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "80px 24px" }}>
+    <div style={{ maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
 
-      <section style={{ marginBottom: "64px" }}>
-        <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Projects</h1>
-        <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
-          A collection of things I have built — web applications, security tools, and side projects. All source code is available on GitHub.
-        </p>
-      </section>
+      <Reveal>
+        <section style={{ marginBottom: "64px" }}>
+          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Projects</h1>
+          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+            A collection of things I have built — web applications, security tools, and side projects. All source code is available on GitHub.
+          </p>
+        </section>
+      </Reveal>
 
       <section>
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          {projects.map((project) => (
-            <div key={project.title} className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
-              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }}>
-                <h2 style={{ color: "#F9FAFB", fontSize: "1.2rem", fontWeight: "600" }}>{project.title}</h2>
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", backgroundColor: "#1A2744", color: "#60A5FA" }}>{project.type}</span>
-                  <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", ...getStatusStyle(project.status) }}>{project.status}</span>
+          {projects.map((project, i) => (
+            <Reveal key={project.title} delay={i * 100}>
+              <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "#1F2937" }}>
+
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <h2 style={{ color: "#F9FAFB", fontSize: "1.2rem", fontWeight: "600" }}>{project.title}</h2>
+                  <div style={{ display: "flex", gap: "8px" }}>
+                    <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", backgroundColor: "#1A2744", color: "#60A5FA" }}>{project.type}</span>
+                    <span style={{ fontSize: "11px", padding: "3px 10px", borderRadius: "20px", ...getStatusStyle(project.status) }}>{project.status}</span>
+                  </div>
                 </div>
+
+                <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7", marginBottom: "16px" }}>{project.description}</p>
+
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="hover-tag" style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{tag}</span>
+                  ))}
+                </div>
+
+                <div style={{ display: "flex", gap: "16px" }}>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover-link" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>GitHub →</a>
+                  )}
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="hover-link" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>Live demo →</a>
+                  )}
+                </div>
+
               </div>
-
-              <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7", marginBottom: "16px" }}>{project.description}</p>
-
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
-                {project.tags.map((tag) => (
-                  <span key={tag} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{tag}</span>
-                ))}
-              </div>
-
-              <div style={{ display: "flex", gap: "16px" }}>
-                {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover-link" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>GitHub →</a>                )}
-                {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{ color: "#6B7280", fontSize: "14px", textDecoration: "none" }}>Live demo →</a>
-                )}
-              </div>
-
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>

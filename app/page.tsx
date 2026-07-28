@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 function BinaryBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -93,7 +94,6 @@ interface Post {
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
-  tags?: string[];
 }
 
 function formatDate(dateStr: string): string {
@@ -103,6 +103,22 @@ function formatDate(dateStr: string): string {
     day: "numeric",
   });
 }
+
+const eyebrowStyle = {
+  color: "#2DD4BF",
+  fontSize: "12px",
+  fontWeight: "600" as const,
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.08em",
+  marginBottom: "12px",
+};
+
+const steps = [
+  { n: "01", title: "Monitor and detect", desc: "Watch 1,500+ endpoints across the network for anomalies, alerts, and threat signatures in real time." },
+  { n: "02", title: "Investigate and triage", desc: "Pull logs, correlate events, and determine whether an alert is noise or a genuine incident that needs escalation." },
+  { n: "03", title: "Contain and respond", desc: "Isolate affected systems, apply fixes, and coordinate with the wider team to stop an incident from spreading." },
+  { n: "04", title: "Document and improve", desc: "Write up the incident, update detection rules, and feed lessons back into the security posture." },
+];
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -115,79 +131,130 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
-      <BinaryBackground />
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
+    <div style={{ position: "relative", minHeight: "100vh" }}>
 
-        <section style={{ marginBottom: "80px" }}>
-          <p style={{ color: "#2DD4BF", fontSize: "14px", marginBottom: "12px" }}>Based in Nairobi, Kenya</p>
-          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "24px", lineHeight: "1.2" }}>
+      {/* Hero with binary background */}
+      <div style={{ position: "relative", overflow: "hidden", minHeight: "560px", display: "flex", alignItems: "center" }}>
+        <BinaryBackground />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "896px", margin: "0 auto", padding: "160px 24px 100px", width: "100%", boxSizing: "border-box" }}>
+          <p style={eyebrowStyle}>Based in Nairobi, Kenya</p>
+          <h1 style={{ color: "#F9FAFB", fontSize: "3rem", fontWeight: "700", marginBottom: "24px", lineHeight: "1.15", maxWidth: "700px" }}>
             Hi, I'm Mark Ciira
           </h1>
-          <p style={{ color: "#9CA3AF", fontSize: "1.1rem", marginBottom: "32px", maxWidth: "600px", lineHeight: "1.8" }}>
+          <p style={{ color: "#9CA3AF", fontSize: "1.15rem", marginBottom: "36px", maxWidth: "560px", lineHeight: "1.8" }}>
             Cybersecurity engineer and software developer. I protect systems, build web applications, and write about what I learn along the way.
           </p>
           <div style={{ display: "flex", gap: "16px" }}>
-            <Link href="/projects" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+            <Link href="/projects" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
               View my work
             </Link>
-            <Link href="/contact" style={{ border: "1px solid #0F766E", color: "#2DD4BF", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+            <Link href="/contact" style={{ border: "1px solid #0F766E", color: "#2DD4BF", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
               Get in touch
             </Link>
           </div>
-        </section>
+        </div>
+      </div>
 
-        <section style={{ marginBottom: "80px" }}>
-          <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "32px" }}>What I do</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
-            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
-              <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Cybersecurity</h3>
-              <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>SOC monitoring, endpoint protection, network security, and incident response. Currently securing 1,500+ endpoints at Family Bank.</p>
-            </div>
-            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
-              <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>Software Development</h3>
-              <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>Full-stack web development using Python, Django, React, and Next.js. I build secure, practical applications.</p>
-            </div>
-            <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
-              <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "8px" }}>IT Support</h3>
-              <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.7" }}>Technical support, infrastructure management, and system administration in enterprise banking environments.</p>
-            </div>
-          </div>
-        </section>
+      {/* Rest of page on solid background */}
+      <div style={{ maxWidth: "896px", margin: "0 auto", padding: "0 24px 100px" }}>
 
-        <section style={{ marginBottom: "80px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px" }}>
-            <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600" }}>Recent posts</h2>
-            <Link href="/blog" className="hover-link" style={{ color: "#9CA3AF", fontSize: "14px", textDecoration: "none" }}>View all →</Link>
-          </div>
-          {posts.length === 0 ? (
-            <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
-              <p style={{ color: "#6B7280", fontSize: "14px" }}>No posts yet. Check back soon.</p>
+        {/* What I do */}
+        <Reveal>
+          <section style={{ marginBottom: "120px", paddingTop: "100px" }}>
+            <p style={eyebrowStyle}>What I do</p>
+            <h2 style={{ color: "#F9FAFB", fontSize: "2rem", fontWeight: "600", marginBottom: "48px", maxWidth: "600px", lineHeight: "1.3" }}>
+              Three areas I work across, every single week
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "28px" }}>
+              <Reveal delay={0}>
+                <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "28px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                  <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "10px", fontSize: "16px" }}>Cybersecurity</h3>
+                  <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.8" }}>SOC monitoring, endpoint protection, network security, and incident response. Currently securing 1,500+ endpoints at Family Bank.</p>
+                </div>
+              </Reveal>
+              <Reveal delay={100}>
+                <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "28px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                  <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "10px", fontSize: "16px" }}>Software development</h3>
+                  <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.8" }}>Full-stack web development using Python, Django, React, and Next.js. I build secure, practical applications.</p>
+                </div>
+              </Reveal>
+              <Reveal delay={200}>
+                <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "28px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                  <h3 style={{ color: "#2DD4BF", fontWeight: "600", marginBottom: "10px", fontSize: "16px" }}>IT support</h3>
+                  <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.8" }}>Technical support, infrastructure management, and system administration in enterprise banking environments.</p>
+                </div>
+              </Reveal>
             </div>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              {posts.map((post) => (
-                <Link key={post._id} href={`/blog/${post.slug.current}`} style={{ textDecoration: "none" }}>
-                  <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "24px", backgroundColor: "rgba(31,41,55,0.85)" }}>
-                    <p style={{ color: "#6B7280", fontSize: "12px", marginBottom: "8px" }}>{formatDate(post.publishedAt)}</p>
-                    <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>{post.title}</h3>
-                    {post.excerpt && <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.6" }}>{post.excerpt}</p>}
+          </section>
+        </Reveal>
+
+        {/* How I work — numbered steps */}
+        <Reveal>
+          <section style={{ marginBottom: "120px" }}>
+            <p style={eyebrowStyle}>How I work</p>
+            <h2 style={{ color: "#F9FAFB", fontSize: "2rem", fontWeight: "600", marginBottom: "48px", maxWidth: "600px", lineHeight: "1.3" }}>
+              A typical incident, start to finish
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {steps.map((step, i) => (
+                <Reveal key={step.n} delay={i * 100}>
+                  <div style={{ display: "flex", gap: "24px", padding: "28px 0", borderTop: i === 0 ? "1px solid #374151" : "none", borderBottom: "1px solid #374151" }}>
+                    <span style={{ color: "#374151", fontSize: "1.8rem", fontWeight: "700", minWidth: "56px" }}>{step.n}</span>
+                    <div>
+                      <h3 style={{ color: "#F9FAFB", fontSize: "17px", fontWeight: "600", marginBottom: "8px" }}>{step.title}</h3>
+                      <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: "1.8", maxWidth: "520px" }}>{step.desc}</p>
+                    </div>
                   </div>
-                </Link>
+                </Reveal>
               ))}
             </div>
-          )}
-        </section>
+          </section>
+        </Reveal>
 
-        <section style={{ backgroundColor: "rgba(31,41,55,0.85)", border: "1px solid #374151", borderRadius: "16px", padding: "48px", textAlign: "center" }}>
-          <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "12px" }}>Let's work together</h2>
-          <p style={{ color: "#9CA3AF", maxWidth: "400px", margin: "0 auto 24px" }}>
-            Open to cybersecurity roles, freelance web development projects, and technical collaborations.
-          </p>
-          <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
-            Contact me
-          </Link>
-        </section>
+        {/* Recent posts */}
+        <Reveal>
+          <section style={{ marginBottom: "120px" }}>
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "48px" }}>
+              <div>
+                <p style={eyebrowStyle}>Writing</p>
+                <h2 style={{ color: "#F9FAFB", fontSize: "2rem", fontWeight: "600", lineHeight: "1.3" }}>Recent posts</h2>
+              </div>
+              <Link href="/blog" className="hover-link" style={{ color: "#9CA3AF", fontSize: "14px", textDecoration: "none" }}>View all →</Link>
+            </div>
+            {posts.length === 0 ? (
+              <div style={{ border: "1px solid #374151", borderRadius: "12px", padding: "28px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                <p style={{ color: "#6B7280", fontSize: "14px" }}>No posts yet. Check back soon.</p>
+              </div>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {posts.map((post, i) => (
+                  <Reveal key={post._id} delay={i * 100}>
+                    <Link href={`/blog/${post.slug.current}`} style={{ textDecoration: "none" }}>
+                      <div className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "28px", backgroundColor: "rgba(31,41,55,0.85)" }}>
+                        <p style={{ color: "#6B7280", fontSize: "12px", marginBottom: "10px" }}>{formatDate(post.publishedAt)}</p>
+                        <h3 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "16px", marginBottom: "8px" }}>{post.title}</h3>
+                        {post.excerpt && <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{post.excerpt}</p>}
+                      </div>
+                    </Link>
+                  </Reveal>
+                ))}
+              </div>
+            )}
+          </section>
+        </Reveal>
+
+        {/* CTA */}
+        <Reveal>
+          <section style={{ backgroundColor: "rgba(31,41,55,0.85)", border: "1px solid #374151", borderRadius: "16px", padding: "56px 48px", textAlign: "center" }}>
+            <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "14px" }}>Let's work together</h2>
+            <p style={{ color: "#9CA3AF", maxWidth: "420px", margin: "0 auto 28px", lineHeight: "1.7" }}>
+              Open to cybersecurity roles, freelance web development projects, and technical collaborations.
+            </p>
+            <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+              Contact me
+            </Link>
+          </section>
+        </Reveal>
 
       </div>
     </div>
