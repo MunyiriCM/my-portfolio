@@ -36,7 +36,7 @@ const projects = [
 ];
 
 function getStatusStyle(status: string) {
-  if (status === "Live") return { backgroundColor: "#0F2E2B", color: "#2DD4BF" };
+  if (status === "Live") return { backgroundColor: "#0F2E2B", color: "#14B8A6" };
   if (status === "In Progress") return { backgroundColor: "#374151", color: "#F59E0B" };
   return { backgroundColor: "#374151", color: "#9CA3AF" };
 }

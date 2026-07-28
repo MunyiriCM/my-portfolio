@@ -74,7 +74,7 @@ export default function ToolsPage() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
                 {group.items.map((tool) => (
                   <div key={tool.name} className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
-                    <h3 style={{ color: "#2DD4BF", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
+                    <h3 style={{ color: "#14B8A6", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
                     <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{tool.description}</p>
                   </div>
                 ))}

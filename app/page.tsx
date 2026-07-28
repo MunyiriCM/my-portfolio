@@ -64,7 +64,7 @@ function BinaryBackground() {
         }
         s.chars.forEach((ch, ci) => {
           const fade = 1 - ci / s.chars.length;
-          ctx.fillStyle = `rgba(45,212,191,${s.opacity * fade})`;
+          ctx.fillStyle = `rgba(20,184,166,${s.opacity * fade})`;
           ctx.fillText(ch, s.x, s.y + ci * 16);
         });
       });
@@ -133,7 +133,6 @@ export default function Home() {
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
 
-      {/* Hero with binary background */}
       <div style={{ position: "relative", overflow: "hidden", minHeight: "560px", display: "flex", alignItems: "center" }}>
         <BinaryBackground />
         <div style={{ position: "relative", zIndex: 1, maxWidth: "896px", margin: "0 auto", padding: "160px 24px 100px", width: "100%", boxSizing: "border-box" }}>
@@ -145,20 +144,18 @@ export default function Home() {
             Cybersecurity engineer and software developer. I protect systems, build web applications, and write about what I learn along the way.
           </p>
           <div style={{ display: "flex", gap: "16px" }}>
-            <Link href="/projects" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+            <Link href="/projects" style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", textDecoration: "none" }}>
               View my work
             </Link>
-            <Link href="/contact" style={{ border: "1px solid #0F766E", color: "#2DD4BF", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+            <Link href="/contact" style={{ border: "1px solid #14B8A6", color: "#2DD4BF", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
               Get in touch
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Rest of page on solid background */}
       <div style={{ maxWidth: "896px", margin: "0 auto", padding: "0 24px 100px" }}>
 
-        {/* What I do */}
         <Reveal>
           <section style={{ marginBottom: "120px", paddingTop: "100px" }}>
             <p style={eyebrowStyle}>What I do</p>
@@ -188,7 +185,6 @@ export default function Home() {
           </section>
         </Reveal>
 
-        {/* How I work — numbered steps */}
         <Reveal>
           <section style={{ marginBottom: "120px" }}>
             <p style={eyebrowStyle}>How I work</p>
@@ -211,7 +207,6 @@ export default function Home() {
           </section>
         </Reveal>
 
-        {/* Recent posts */}
         <Reveal>
           <section style={{ marginBottom: "120px" }}>
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "48px" }}>
@@ -243,14 +238,13 @@ export default function Home() {
           </section>
         </Reveal>
 
-        {/* CTA */}
         <Reveal>
           <section style={{ backgroundColor: "rgba(31,41,55,0.85)", border: "1px solid #374151", borderRadius: "16px", padding: "56px 48px", textAlign: "center" }}>
             <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "14px" }}>Let's work together</h2>
             <p style={{ color: "#9CA3AF", maxWidth: "420px", margin: "0 auto 28px", lineHeight: "1.7" }}>
               Open to cybersecurity roles, freelance web development projects, and technical collaborations.
             </p>
-            <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>
+            <Link href="/contact" style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "13px 26px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", textDecoration: "none" }}>
               Contact me
             </Link>
           </section>

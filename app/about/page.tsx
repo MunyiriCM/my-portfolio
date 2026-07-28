@@ -56,7 +56,7 @@ export default function AboutPage() {
                 <h3 style={{ color: "#F9FAFB", fontWeight: "600", marginBottom: "16px" }}>Cybersecurity</h3>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                   {["SOC Operations", "Endpoint Protection", "Network Security", "Kaspersky EDR", "CrowdStrike", "Splunk", "Incident Response", "Ethical Hacking"].map((skill) => (
-                    <span key={skill} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
+                    <span key={skill} className="hover-tag" style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
                   ))}
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 <h3 style={{ color: "#F9FAFB", fontWeight: "600", marginBottom: "16px" }}>Development</h3>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                   {["Python", "Django", "Django REST Framework", "React", "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"].map((skill) => (
-                    <span key={skill} style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
+                    <span key={skill} className="hover-tag" style={{ fontSize: "12px", backgroundColor: "#374151", color: "#2DD4BF", padding: "4px 12px", borderRadius: "20px" }}>{skill}</span>
                   ))}
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                     <h3 style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>{cert.name}</h3>
                     <p style={{ color: "#6B7280", fontSize: "13px" }}>{cert.org}</p>
                   </div>
-                  <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#2DD4BF", whiteSpace: "nowrap" }}>
+                  <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#14B8A6", whiteSpace: "nowrap" }}>
                     {cert.status}
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         <section style={{ backgroundColor: "#1F2937", border: "1px solid #374151", borderRadius: "16px", padding: "48px", textAlign: "center" }}>
           <h2 style={{ color: "#F9FAFB", fontSize: "1.8rem", fontWeight: "600", marginBottom: "12px" }}>Want to work together?</h2>
           <p style={{ color: "#9CA3AF", marginBottom: "24px" }}>I'm open to cybersecurity roles, freelance web projects, and technical collaborations.</p>
-          <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Get in touch</Link>
+          <Link href="/contact" style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", textDecoration: "none" }}>Get in touch</Link>
         </section>
       </Reveal>
 

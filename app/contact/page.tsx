@@ -119,7 +119,7 @@ export default function ContactPage() {
             </div>
 
             {status === "success" && (
-              <div style={{ backgroundColor: "#0F2E2B", border: "1px solid #0F766E", borderRadius: "8px", padding: "12px 16px", color: "#2DD4BF", fontSize: "14px" }}>
+              <div style={{ backgroundColor: "#0F2E2B", border: "1px solid #14B8A6", borderRadius: "8px", padding: "12px 16px", color: "#14B8A6", fontSize: "14px" }}>
                 Message sent successfully. I will get back to you soon.
               </div>
             )}
@@ -130,7 +130,7 @@ export default function ContactPage() {
               </div>
             )}
 
-            <button onClick={handleSubmit} disabled={status === "loading"} style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "14px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", border: "none", cursor: status === "loading" ? "not-allowed" : "pointer", opacity: status === "loading" ? 0.6 : 1 }}>
+            <button onClick={handleSubmit} disabled={status === "loading"} style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "14px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", border: "none", cursor: status === "loading" ? "not-allowed" : "pointer", opacity: status === "loading" ? 0.6 : 1 }}>
               {status === "loading" ? "Sending..." : "Send message"}
             </button>
           </div>

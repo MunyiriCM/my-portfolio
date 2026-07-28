@@ -24,7 +24,7 @@ export default function ResumePage() {
             <p style={{ color: "#9CA3AF", fontSize: "16px", marginBottom: "4px" }}>Cybersecurity Engineer · Software Developer</p>
             <p style={{ color: "#6B7280", fontSize: "14px" }}>Nairobi, Kenya</p>
           </div>
-          <a href="/mark-munyiri-cv.pdf" download style={{ backgroundColor: "#0F766E", color: "#F9FAFB", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Download PDF</a>
+          <a href="/mark-munyiri-cv.pdf" download style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "12px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", textDecoration: "none" }}>Download PDF</a>
         </div>
       </Reveal>
 
@@ -103,7 +103,7 @@ export default function ResumePage() {
                   <p style={{ color: "#F9FAFB", fontWeight: "500", fontSize: "15px", marginBottom: "4px" }}>{cert.name}</p>
                   <p style={{ color: "#6B7280", fontSize: "13px" }}>{cert.org}</p>
                 </div>
-                <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#2DD4BF", whiteSpace: "nowrap" }}>
+                <span style={{ fontSize: "12px", padding: "4px 12px", borderRadius: "20px", backgroundColor: cert.status === "In Progress" ? "#374151" : "#0F2E2B", color: cert.status === "In Progress" ? "#F59E0B" : "#14B8A6", whiteSpace: "nowrap" }}>
                   {cert.status}
                 </span>
               </div>
