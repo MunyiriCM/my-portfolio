@@ -1,50 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --bg-primary: #111827;
-  --bg-secondary: #1F2937;
-  --bg-card: #374151;
-  --brand-primary: #0F766E;
-  --brand-accent: #2DD4BF;
-  --text-primary: #F9FAFB;
-  --text-muted: #9CA3AF;
-  --text-faint: #6B7280;
-  --border-subtle: #374151;
-  --border-default: #4B5563;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #111827;
-  color: #F9FAFB;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-}
-
-::selection {
-  background-color: #2DD4BF;
-  color: #111827;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1F2937;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #374151;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0F766E;
+  background-color: #F7F5F2;
+  color: #1C1917;
 }
 
 .hover-card {
@@ -54,7 +12,7 @@ body {
 .hover-card:hover {
   transform: translateY(-4px);
   border-color: #0F766E !important;
-  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.12);
 }
 
 .hover-tag {
@@ -63,7 +21,7 @@ body {
 
 .hover-tag:hover {
   background-color: #0F766E !important;
-  color: #F9FAFB !important;
+  color: #FFFFFF !important;
 }
 
 .hover-link {
@@ -74,6 +32,6 @@ body {
 }
 
 .hover-link:hover {
-  color: #2DD4BF !important;
+  color: #0F766E !important;
   gap: 8px;
 }

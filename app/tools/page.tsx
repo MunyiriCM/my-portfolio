@@ -57,8 +57,8 @@ export default function ToolsPage() {
 
       <Reveal>
         <section style={{ marginBottom: "64px" }}>
-          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Tools</h1>
-          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
+          <h1 style={{ color: "#1C1917", fontSize: "2.6rem", fontWeight: "700", marginBottom: "18px" }}>Tools</h1>
+          <p style={{ color: "#44403C", fontSize: "19px", lineHeight: "1.8", maxWidth: "620px" }}>
             The tools, platforms, and technologies I use day to day for cybersecurity work, software development, and learning. Updated as my stack evolves.
           </p>
         </section>
@@ -68,14 +68,14 @@ export default function ToolsPage() {
         {tools.map((group, gi) => (
           <Reveal key={group.category} delay={gi * 50}>
             <section>
-              <h2 style={{ color: "#F9FAFB", fontSize: "1.4rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #374151" }}>
+              <h2 style={{ color: "#1C1917", fontSize: "1.6rem", fontWeight: "600", marginBottom: "24px", paddingBottom: "8px", borderBottom: "1px solid #E8E4DD" }}>
                 {group.category}
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
                 {group.items.map((tool) => (
-                  <div key={tool.name} className="hover-card" style={{ border: "1px solid #374151", borderRadius: "12px", padding: "20px", backgroundColor: "#1F2937" }}>
-                    <h3 style={{ color: "#14B8A6", fontWeight: "600", fontSize: "14px", marginBottom: "8px" }}>{tool.name}</h3>
-                    <p style={{ color: "#9CA3AF", fontSize: "13px", lineHeight: "1.7" }}>{tool.description}</p>
+                  <div key={tool.name} className="hover-card" style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "20px", backgroundColor: "#FFFFFF" }}>
+                    <h3 style={{ color: "#0F766E", fontWeight: "600", fontSize: "16px", marginBottom: "8px" }}>{tool.name}</h3>
+                    <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.75" }}>{tool.description}</p>
                   </div>
                 ))}
               </div>

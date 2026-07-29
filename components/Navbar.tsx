@@ -10,7 +10,6 @@ const links = [
   { href: "/blog", label: "Blog" },
   { href: "/resume", label: "Resume" },
   { href: "/tools", label: "Tools" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -25,32 +24,53 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 50,
-      padding: "16px 24px",
-      borderBottom: scrolled ? "1px solid #374151" : "1px solid transparent",
-      backgroundColor: scrolled ? "rgba(17,24,39,0.95)" : "transparent",
-      backdropFilter: scrolled ? "blur(12px)" : "none",
-      transition: "all 0.3s ease",
-    }}>
-      <nav style={{ maxWidth: "896px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <Link href="/" style={{ fontWeight: "600", fontSize: "18px", color: "#F9FAFB", textDecoration: "none" }}>
+    <div style={{ position: "fixed", top: "16px", left: 0, right: 0, zIndex: 50, display: "flex", justifyContent: "center", padding: "0 16px" }}>
+      <nav
+        style={{
+          maxWidth: "1000px",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: scrolled ? "#FFFFFF" : "rgba(255,255,255,0.9)",
+          border: "1px solid #E8E4DD",
+          borderRadius: "999px",
+          padding: "10px 12px 10px 20px",
+          boxShadow: scrolled ? "0 4px 16px rgba(0,0,0,0.08)" : "0 2px 8px rgba(0,0,0,0.04)",
+          backdropFilter: "blur(8px)",
+          transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+        }}
+      >
+        <Link href="/" style={{ fontWeight: "600", fontSize: "16px", color: "#1C1917", textDecoration: "none" }}>
           Mark Ciira
         </Link>
-        <ul style={{ display: "flex", gap: "24px", listStyle: "none", margin: 0, padding: 0 }}>
+
+        <ul style={{ display: "flex", gap: "22px", listStyle: "none", margin: 0, padding: 0 }}>
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} style={{ fontSize: "13px", color: "#9CA3AF", textDecoration: "none" }}>
+              <Link href={link.href} style={{ fontSize: "13px", fontWeight: "500", color: "#57534E", textDecoration: "none" }}>
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
+
+        <Link
+          href="/contact"
+          style={{
+            backgroundColor: "#0F766E",
+            color: "#FFFFFF",
+            padding: "9px 20px",
+            borderRadius: "999px",
+            fontSize: "13px",
+            fontWeight: "600",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Contact me
+        </Link>
       </nav>
-    </header>
+    </div>
   );
 }
