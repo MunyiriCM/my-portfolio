@@ -113,11 +113,18 @@ const eyebrowStyle = {
   marginBottom: "14px",
 };
 
+const stats = [
+  { value: "2,000+", label: "endpoints and servers protected" },
+  { value: "15+", label: "incidents resolved a month" },
+  { value: "98%", label: "of incidents closed within SLA" },
+  { value: "25", label: "learners in the first CyberBridge cohort" },
+];
+
 const steps = [
-  { n: "01", title: "Monitor and detect", desc: "Watch 1,500+ endpoints across the network for anomalies, alerts, and threat signatures in real time." },
-  { n: "02", title: "Investigate and triage", desc: "Pull logs, correlate events, and determine whether an alert is noise or a genuine incident that needs escalation." },
-  { n: "03", title: "Contain and respond", desc: "Isolate affected systems, apply fixes, and coordinate with the wider team to stop an incident from spreading." },
-  { n: "04", title: "Document and improve", desc: "Write up the incident, update detection rules, and feed lessons back into the security posture." },
+  { n: "01", title: "Triage", desc: "Review the alert, decide how serious it is, and escalate high-priority incidents within SLA." },
+  { n: "02", title: "Investigate", desc: "Dig into logs and system data to find the root cause." },
+  { n: "03", title: "Contain and recover", desc: "Stop the problem spreading, fix the cause and restore normal service." },
+  { n: "04", title: "Document and follow up", desc: "Record the incident and the follow-up actions so management and auditors can review them." },
 ];
 
 export default function Home() {
@@ -140,10 +147,10 @@ export default function Home() {
           <h1 style={{ color: "#1C1917", fontSize: "3.2rem", fontWeight: "700", marginBottom: "26px", lineHeight: "1.15", maxWidth: "700px" }}>
             Hi, I'm Mark Ciira
           </h1>
-          <p style={{ color: "#44403C", fontSize: "19px", marginBottom: "38px", maxWidth: "570px", lineHeight: "1.8" }}>
-            Cybersecurity engineer and software developer. I protect systems, build web applications, and write about what I learn along the way.
+          <p style={{ color: "#44403C", fontSize: "19px", marginBottom: "38px", maxWidth: "590px", lineHeight: "1.8" }}>
+            Cyber security analyst, trainer and developer. I protect systems in a regulated banking environment, teach cybersecurity, and build web applications.
           </p>
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
             <Link href="/projects" style={{ backgroundColor: "#0F766E", color: "#FFFFFF", padding: "14px 28px", borderRadius: "8px", fontSize: "15px", fontWeight: "600", textDecoration: "none" }}>
               View my work
             </Link>
@@ -158,28 +165,41 @@ export default function Home() {
       <div style={{ maxWidth: "896px", margin: "0 auto", padding: "0 24px 100px" }}>
 
         <Reveal>
-          <section style={{ marginBottom: "120px", paddingTop: "100px" }}>
+          <section style={{ marginBottom: "110px", paddingTop: "40px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", border: "1px solid #E8E4DD", borderRadius: "16px", backgroundColor: "#FFFFFF", overflow: "hidden" }}>
+              {stats.map((stat, i) => (
+                <div key={stat.value} style={{ padding: "28px 24px", borderLeft: i === 0 ? "none" : "1px solid #E8E4DD" }}>
+                  <p style={{ color: "#0F766E", fontSize: "2.2rem", fontWeight: "700", lineHeight: "1.1", marginBottom: "8px" }}>{stat.value}</p>
+                  <p style={{ color: "#44403C", fontSize: "14px", lineHeight: "1.5" }}>{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section style={{ marginBottom: "120px" }}>
             <p style={eyebrowStyle}>What I do</p>
             <h2 style={{ color: "#1C1917", fontSize: "2.2rem", fontWeight: "600", marginBottom: "48px", maxWidth: "600px", lineHeight: "1.3" }}>
               Three areas I work across, every single week
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "28px" }}>
               <Reveal delay={0}>
-                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF" }}>
+                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF", height: "100%", boxSizing: "border-box" }}>
                   <h3 style={{ color: "#0F766E", fontWeight: "600", marginBottom: "10px", fontSize: "17px" }}>Cybersecurity</h3>
-                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>SOC monitoring, endpoint protection, network security, and incident response. Currently securing 1,500+ endpoints at Family Bank.</p>
+                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>Incident response, vulnerability and patch management, and endpoint security in a regulated banking environment, across 2,000+ endpoints and servers.</p>
                 </div>
               </Reveal>
               <Reveal delay={100}>
-                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF" }}>
+                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF", height: "100%", boxSizing: "border-box" }}>
                   <h3 style={{ color: "#0F766E", fontWeight: "600", marginBottom: "10px", fontSize: "17px" }}>Software development</h3>
-                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>Full-stack web development using Python, Django, React, and Next.js. I build secure, practical applications.</p>
+                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>Full-stack web development with Python, Django, Next.js and TypeScript. I recently delivered a production ecommerce site for a client.</p>
                 </div>
               </Reveal>
               <Reveal delay={200}>
-                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF" }}>
-                  <h3 style={{ color: "#0F766E", fontWeight: "600", marginBottom: "10px", fontSize: "17px" }}>IT support</h3>
-                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>Technical support, infrastructure management, and system administration in enterprise banking environments.</p>
+                <div style={{ border: "1px solid #E8E4DD", borderRadius: "12px", padding: "28px", backgroundColor: "#FFFFFF", height: "100%", boxSizing: "border-box" }}>
+                  <h3 style={{ color: "#0F766E", fontWeight: "600", marginBottom: "10px", fontSize: "17px" }}>Training</h3>
+                  <p style={{ color: "#44403C", fontSize: "15px", lineHeight: "1.8" }}>Lead Cybersecurity Trainer on the CyberBridge programme. I designed an 18-week, 160-hour curriculum and I am teaching its first cohort of 25 learners.</p>
                 </div>
               </Reveal>
             </div>

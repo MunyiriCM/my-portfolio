@@ -2,51 +2,65 @@ import Reveal from "@/components/Reveal";
 
 export const metadata = {
   title: "Tools",
-  description: "Tools, software, and equipment used by Mark Ciira day to day.",
+  description: "Tools, software and platforms used by Mark Ciira across security operations, development and training.",
 };
 
 const tools = [
   {
-    category: "Cybersecurity",
+    category: "Security operations",
     items: [
-      { name: "Kaspersky Security Center", description: "My main EDR and endpoint protection platform. I use this daily to monitor 1,500+ endpoints and servers at Family Bank." },
-      { name: "CrowdStrike Falcon", description: "Deployed alongside Kaspersky for advanced threat detection. Configured mutual exclusions between both platforms." },
-      { name: "Splunk", description: "SIEM platform I am actively developing skills in through TryHackMe labs for log analysis and threat hunting." },
-      { name: "Wireshark", description: "Network packet analysis for troubleshooting and monitoring suspicious traffic." },
-      { name: "Nmap", description: "Network scanning and enumeration during security assessments." },
-      { name: "Metasploit", description: "Penetration testing framework used in ethical hacking labs and CTF practice." },
+      { name: "Kaspersky Security Center", description: "My main endpoint security platform. I administer it across 2,000+ endpoints and servers: agent connectivity, protection status and routine health checks, plus Application Control troubleshooting on production servers." },
+      { name: "CrowdStrike Falcon", description: "Troubleshot installation conflicts between Falcon and Kaspersky's kernel driver and self-defence module." },
+      { name: "Splunk", description: "SIEM I am learning through TryHackMe labs, for log analysis and detection." },
+    ],
+  },
+  {
+    category: "Offensive and analysis tools (lab and training use)",
+    items: [
+      { name: "Nmap", description: "Network scanning and enumeration in labs and training." },
+      { name: "Burp Suite", description: "Web application testing in labs and training." },
+      { name: "Metasploit", description: "Exploitation framework used in labs and training exercises." },
+      { name: "Wireshark", description: "Packet analysis in labs and training." },
+    ],
+  },
+  {
+    category: "Home lab (being built)",
+    items: [
+      { name: "OPNsense", description: "Firewall in my home lab. I am building the lab to study how firewall logs and EDR alerts relate to each other." },
+      { name: "Wazuh", description: "Detection and monitoring platform in the same home lab, still being built." },
+      { name: "Kali Linux", description: "Used for lab and training work, including my home lab." },
     ],
   },
   {
     category: "Development",
     items: [
-      { name: "Python", description: "My primary programming language. I use it for backend development, scripting, and automation." },
-      { name: "Django", description: "My go-to web framework for building secure full-stack applications. Used in Xtracker and other projects." },
-      { name: "Django REST Framework", description: "Building REST APIs that connect Django backends to React and Next.js frontends." },
-      { name: "Next.js", description: "React framework I use for building fast, SEO-friendly frontends including this portfolio." },
-      { name: "TypeScript", description: "Typed JavaScript that helps catch bugs early. I use it in all my Next.js projects." },
-      { name: "PostgreSQL", description: "My preferred relational database for production applications." },
-      { name: "Tailwind CSS", description: "Utility-first CSS framework I use to build clean, responsive UIs quickly." },
+      { name: "Python", description: "My main programming language, used for Django applications and scripting." },
+      { name: "Django", description: "The framework behind Xtracker, my expense tracker, with user-scoped access controls and the Django ORM." },
+      { name: "Next.js", description: "The React framework behind this site and the Evolve ecommerce site I built for a client." },
+      { name: "TypeScript", description: "Used across my Next.js projects to catch bugs early." },
+      { name: "Tailwind CSS", description: "Used for styling on the Evolve ecommerce site." },
+      { name: "Bash", description: "Shell scripting on Linux." },
     ],
   },
   {
-    category: "Tools and Platforms",
+    category: "Platforms and services",
     items: [
-      { name: "VS Code", description: "My main code editor. I use it for everything from writing Python to building Next.js frontends." },
-      { name: "GitHub", description: "Version control and code hosting. All my projects live here." },
-      { name: "Vercel", description: "Where I deploy Next.js projects. Auto-deploys from GitHub on every push." },
-      { name: "TryHackMe", description: "My main platform for practising cybersecurity skills, labs, and CTF challenges." },
-      { name: "Postman", description: "Testing and debugging REST APIs during development." },
-      { name: "Windows 11", description: "My daily operating system for both development and security work." },
+      { name: "VS Code", description: "My main code editor." },
+      { name: "GitHub", description: "Version control and code hosting for my projects." },
+      { name: "Vercel", description: "Hosting for this site and the Evolve ecommerce site." },
+      { name: "Sanity", description: "Headless CMS behind the blog on this site and the product data on the Evolve site." },
+      { name: "Resend", description: "Email delivery for this site's contact form and Evolve's order emails, with DKIM and SPF verified." },
+      { name: "TryHackMe", description: "Where I practise SIEM, firewall and penetration testing labs, and where I am building the CyberBridge capstone CTF." },
     ],
   },
   {
     category: "Learning",
     items: [
-      { name: "ISC2 CC", description: "Certified in Cybersecurity — my first professional security certification." },
-      { name: "CompTIA Security+", description: "Currently studying toward this certification to deepen my security fundamentals." },
-      { name: "CyberShujaa / Cisco Ethical Hacker", description: "Completed ethical hacking training covering reconnaissance, exploitation, and reporting." },
-      { name: "ALX Back-End Development", description: "Structured programme that solidified my Python and Django backend development skills." },
+      { name: "ISC2 Certified in Cybersecurity (CC)", description: "Certified." },
+      { name: "Cisco Ethical Hacker", description: "Certified through CyberShujaa, 2025 cohort." },
+      { name: "Fortinet NSE 1 and NSE 2", description: "Certified in Cybersecurity." },
+      { name: "CompTIA Security+", description: "Currently studying towards this certification." },
+      { name: "Microsoft SC-900", description: "Currently studying towards this certification." },
     ],
   },
 ];
@@ -59,7 +73,7 @@ export default function ToolsPage() {
         <section style={{ marginBottom: "64px" }}>
           <h1 style={{ color: "#1C1917", fontSize: "2.6rem", fontWeight: "700", marginBottom: "18px" }}>Tools</h1>
           <p style={{ color: "#44403C", fontSize: "19px", lineHeight: "1.8", maxWidth: "620px" }}>
-            The tools, platforms, and technologies I use day to day for cybersecurity work, software development, and learning. Updated as my stack evolves.
+            The tools, platforms and technologies I use for security operations, development and training. I update this page as my stack changes.
           </p>
         </section>
       </Reveal>
