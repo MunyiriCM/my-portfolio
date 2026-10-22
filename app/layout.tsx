@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,23 +14,40 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle = "Mark Ciira — Cyber Security Analyst, Trainer and Developer";
+const siteDescription =
+  "Personal portfolio and blog of Mark Ciira, a cyber security analyst, cybersecurity trainer and developer based in Nairobi, Kenya.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://markciira.com"),
   title: {
-    default: "Mark Munyiri — Cybersecurity & Software Engineer",
-    template: "%s | Mark Munyiri",
+    default: siteTitle,
+    template: "%s | Mark Ciira",
   },
-  description:
-    "Personal portfolio and blog of Mark Munyiri — cybersecurity engineer, IT support specialist, and software developer based in Nairobi, Kenya.",
-  keywords: ["cybersecurity", "software engineer", "Nairobi", "Kenya", "portfolio"],
-  authors: [{ name: "Mark Munyiri" }],
+  description: siteDescription,
+  keywords: [
+    "cyber security analyst",
+    "cybersecurity trainer",
+    "incident response",
+    "vulnerability management",
+    "Next.js",
+    "Nairobi",
+    "Kenya",
+    "portfolio",
+  ],
+  authors: [{ name: "Mark Ciira Munyiri" }],
   openGraph: {
-    title: "Mark Munyiri — Cybersecurity & Software Engineer",
-    description:
-      "Personal portfolio and blog of Mark Munyiri based in Nairobi, Kenya.",
-    url: "https://markmunyiri.dev",
-    siteName: "Mark Munyiri",
-    locale: "en_US",
+    title: siteTitle,
+    description: siteDescription,
+    url: "https://markciira.com",
+    siteName: "Mark Ciira",
+    locale: "en_GB",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 

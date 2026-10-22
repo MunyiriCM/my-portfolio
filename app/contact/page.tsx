@@ -16,7 +16,7 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -38,13 +38,12 @@ export default function ContactPage() {
 
   const inputStyle = {
     width: "100%",
-    backgroundColor: "#111827",
-    border: "1px solid #374151",
+    backgroundColor: "#FFFFFF",
+    border: "1px solid #D6D2CA",
     borderRadius: "8px",
     padding: "12px 16px",
-    fontSize: "14px",
-    color: "#F9FAFB",
-    outline: "none",
+    fontSize: "15px",
+    color: "#1C1917",
     boxSizing: "border-box" as const,
   };
 
@@ -52,88 +51,90 @@ export default function ContactPage() {
     display: "block",
     fontSize: "14px",
     fontWeight: "500" as const,
-    color: "#9CA3AF",
+    color: "#44403C",
     marginBottom: "8px",
   };
+
+  const infoHeading = { color: "#1C1917", fontWeight: "600" as const, fontSize: "16px", marginBottom: "8px" };
 
   return (
     <div style={{ maxWidth: "896px", margin: "0 auto", padding: "120px 24px 80px" }}>
 
       <Reveal>
         <section style={{ marginBottom: "64px" }}>
-          <h1 style={{ color: "#F9FAFB", fontSize: "2.5rem", fontWeight: "700", marginBottom: "16px" }}>Get in touch</h1>
-          <p style={{ color: "#9CA3AF", fontSize: "16px", lineHeight: "1.8", maxWidth: "600px" }}>
-            Open to cybersecurity roles, freelance web development projects, and technical collaborations. Fill in the form and I will get back to you as soon as possible.
+          <h1 style={{ color: "#1C1917", fontSize: "2.6rem", fontWeight: "700", marginBottom: "18px" }}>Get in touch</h1>
+          <p style={{ color: "#44403C", fontSize: "18px", lineHeight: "1.8", maxWidth: "620px" }}>
+            Open to cybersecurity roles, freelance web development projects and technical collaborations. Fill in the form and I will get back to you as soon as possible.
           </p>
         </section>
       </Reveal>
 
       <Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "64px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "56px" }}>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+          <div style={{ flex: "1 1 220px", display: "flex", flexDirection: "column", gap: "30px" }}>
             <div>
-              <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>Email</h2>
-              <p style={{ color: "#9CA3AF", fontSize: "14px" }}>mmunyiri12@gmail.com</p>
+              <h2 style={infoHeading}>Email</h2>
+              <a href="mailto:mmunyiri12@gmail.com" style={{ color: "#0F766E", fontSize: "15px", textDecoration: "none" }}>mmunyiri12@gmail.com</a>
             </div>
             <div>
-              <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "6px" }}>Location</h2>
-              <p style={{ color: "#9CA3AF", fontSize: "14px" }}>Nairobi, Kenya</p>
+              <h2 style={infoHeading}>Location</h2>
+              <p style={{ color: "#44403C", fontSize: "15px" }}>Nairobi, Kenya</p>
             </div>
             <div>
-              <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "10px" }}>LinkedIn</h2>
-              <a href="https://linkedin.com/in/markmunyiri" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#0A66C2", color: "#ffffff", padding: "8px 16px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>Visit LinkedIn ↗</a>
+              <h2 style={infoHeading}>LinkedIn</h2>
+              <a href="https://www.linkedin.com/in/mark-ciira-1a1a332a4/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#0A66C2", color: "#FFFFFF", padding: "9px 18px", borderRadius: "6px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Visit LinkedIn ↗</a>
             </div>
             <div>
-              <h2 style={{ color: "#F9FAFB", fontWeight: "600", fontSize: "15px", marginBottom: "10px" }}>GitHub</h2>
-              <a href="https://github.com/MunyiriCM" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#374151", color: "#F9FAFB", padding: "8px 16px", borderRadius: "6px", fontSize: "13px", fontWeight: "500", textDecoration: "none" }}>Visit GitHub ↗</a>
+              <h2 style={infoHeading}>GitHub</h2>
+              <a href="https://github.com/MunyiriCM" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", backgroundColor: "#1C1917", color: "#FFFFFF", padding: "9px 18px", borderRadius: "6px", fontSize: "14px", fontWeight: "500", textDecoration: "none" }}>Visit GitHub ↗</a>
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <form onSubmit={handleSubmit} style={{ flex: "2 1 340px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
               <div>
-                <label style={labelStyle}>Name</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" style={inputStyle} />
+                <label htmlFor="name" style={labelStyle}>Name</label>
+                <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" maxLength={100} required style={inputStyle} />
               </div>
               <div>
-                <label style={labelStyle}>Email</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" style={inputStyle} />
+                <label htmlFor="email" style={labelStyle}>Email</label>
+                <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" maxLength={200} required style={inputStyle} />
               </div>
             </div>
 
             <div>
-              <label style={labelStyle}>Subject</label>
-              <select name="subject" value={formData.subject} onChange={handleChange} style={{ ...inputStyle, cursor: "pointer" }}>
-                <option value="" style={{ backgroundColor: "#111827" }}>Select a subject</option>
-                <option value="Job Opportunity" style={{ backgroundColor: "#111827" }}>Job opportunity</option>
-                <option value="Freelance Project" style={{ backgroundColor: "#111827" }}>Freelance project</option>
-                <option value="Collaboration" style={{ backgroundColor: "#111827" }}>Collaboration</option>
-                <option value="General Enquiry" style={{ backgroundColor: "#111827" }}>General enquiry</option>
+              <label htmlFor="subject" style={labelStyle}>Subject</label>
+              <select id="subject" name="subject" value={formData.subject} onChange={handleChange} required style={{ ...inputStyle, cursor: "pointer" }}>
+                <option value="">Select a subject</option>
+                <option value="Job Opportunity">Job opportunity</option>
+                <option value="Freelance Project">Freelance project</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="General Enquiry">General enquiry</option>
               </select>
             </div>
 
             <div>
-              <label style={labelStyle}>Message</label>
-              <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your project or enquiry..." rows={6} style={{ ...inputStyle, resize: "none" }} />
+              <label htmlFor="message" style={labelStyle}>Message</label>
+              <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your project or enquiry..." rows={6} maxLength={5000} required style={{ ...inputStyle, resize: "vertical" }} />
             </div>
 
             {status === "success" && (
-              <div style={{ backgroundColor: "#0F2E2B", border: "1px solid #14B8A6", borderRadius: "8px", padding: "12px 16px", color: "#14B8A6", fontSize: "14px" }}>
-                Message sent successfully. I will get back to you soon.
+              <div role="status" style={{ backgroundColor: "#D1FAE5", border: "1px solid #6EE7B7", borderRadius: "8px", padding: "12px 16px", color: "#065F46", fontSize: "15px" }}>
+                Message sent. I will get back to you soon.
               </div>
             )}
 
             {status === "error" && (
-              <div style={{ backgroundColor: "#2D1515", border: "1px solid #7F1D1D", borderRadius: "8px", padding: "12px 16px", color: "#FCA5A5", fontSize: "14px" }}>
-                Something went wrong. Please try again or email me directly.
+              <div role="alert" style={{ backgroundColor: "#FEE2E2", border: "1px solid #FCA5A5", borderRadius: "8px", padding: "12px 16px", color: "#991B1B", fontSize: "15px" }}>
+                Something went wrong. Please try again or email me directly at mmunyiri12@gmail.com.
               </div>
             )}
 
-            <button onClick={handleSubmit} disabled={status === "loading"} style={{ backgroundColor: "#14B8A6", color: "#042C24", padding: "14px 24px", borderRadius: "8px", fontSize: "14px", fontWeight: "600", border: "none", cursor: status === "loading" ? "not-allowed" : "pointer", opacity: status === "loading" ? 0.6 : 1 }}>
+            <button type="submit" disabled={status === "loading"} style={{ backgroundColor: "#0F766E", color: "#FFFFFF", padding: "14px 24px", borderRadius: "8px", fontSize: "15px", fontWeight: "600", border: "none", cursor: status === "loading" ? "not-allowed" : "pointer", opacity: status === "loading" ? 0.6 : 1 }}>
               {status === "loading" ? "Sending..." : "Send message"}
             </button>
-          </div>
+          </form>
 
         </div>
       </Reveal>
