@@ -9,6 +9,7 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -27,7 +28,7 @@ export default function ContactPage() {
       });
       if (res.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", website: "" });
       } else {
         setStatus("error");
       }
@@ -101,6 +102,11 @@ export default function ContactPage() {
                 <label htmlFor="email" style={labelStyle}>Email</label>
                 <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" maxLength={200} required style={inputStyle} />
               </div>
+            </div>
+
+            <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}>
+              <label htmlFor="website">Leave this field empty</label>
+              <input id="website" type="text" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
             </div>
 
             <div>
