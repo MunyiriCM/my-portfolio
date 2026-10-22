@@ -26,7 +26,7 @@ const h2Style = {
 const roles = [
   {
     title: "Cyber Security Analyst – Security Operations",
-    org: "Ariel Technology Limited · Deployed at Family Bank, Nairobi",
+    org: "Ariel Technology Limited · Nairobi",
     period: "May 2025 — Present",
     bullets: [
       "Resolve 15+ security incidents a month end to end (triage, containment, root-cause analysis and recovery), with 98% closed within SLA",
@@ -55,7 +55,7 @@ const roles = [
   },
   {
     title: "IT Support Intern",
-    org: "Ariel Technology Limited · Deployed at Family Bank, Nairobi",
+    org: "Ariel Technology Limited · Nairobi",
     period: "January 2025 — May 2025",
     bullets: [
       "Ran endpoint security checks and vulnerability assessments across network devices, finding misconfigurations and patch gaps",

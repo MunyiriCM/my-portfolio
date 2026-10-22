@@ -9,7 +9,7 @@ export const metadata = {
 const roles = [
   {
     title: "Cyber Security Analyst – Security Operations",
-    org: "Ariel Technology Limited · Deployed at Family Bank, Nairobi",
+    org: "Ariel Technology Limited · Nairobi",
     period: "May 2025 — Present",
     bullets: [
       "Resolve 15+ security incidents a month end to end (triage, containment, root-cause analysis and recovery), with 98% closed within SLA",
@@ -34,7 +34,7 @@ const roles = [
   },
   {
     title: "IT Support Intern",
-    org: "Ariel Technology Limited · Deployed at Family Bank, Nairobi",
+    org: "Ariel Technology Limited · Nairobi",
     period: "January 2025 — May 2025",
     bullets: [
       "Ran endpoint security checks and vulnerability assessments across network devices, finding misconfigurations and patch gaps",
@@ -78,7 +78,7 @@ export default function AboutPage() {
           <h1 style={{ color: "#1C1917", fontSize: "2.6rem", fontWeight: "700", marginBottom: "26px" }}>About me</h1>
           <div style={{ maxWidth: "680px", display: "flex", flexDirection: "column", gap: "18px" }}>
             <p style={{ color: "#44403C", fontSize: "18px", lineHeight: "1.85" }}>
-              I'm Mark Ciira Munyiri, a cyber security analyst based in Nairobi, Kenya. I work in security operations at Family Bank through Ariel Technology Limited, protecting 2,000+ endpoints and servers in a regulated banking environment. Day to day that means incident response, vulnerability and patch management, and keeping audit-ready records.
+              I&apos;m Mark Ciira Munyiri, a cyber security analyst based in Nairobi, Kenya. I work in security operations at Ariel Technology Limited, protecting 2,000+ endpoints and servers in a regulated banking environment. Day to day that means incident response, vulnerability and patch management, and keeping audit-ready records.
             </p>
             <p style={{ color: "#44403C", fontSize: "18px", lineHeight: "1.85" }}>
               I also teach. As Lead Cybersecurity Trainer on the CyberBridge programme, I designed an 18-week, 160-hour curriculum and I am teaching its first cohort of 25 learners, including people from disadvantaged backgrounds.
@@ -161,7 +161,7 @@ export default function AboutPage() {
       <Reveal>
         <section style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E4DD", borderRadius: "16px", padding: "48px", textAlign: "center" }}>
           <h2 style={{ color: "#1C1917", fontSize: "1.9rem", fontWeight: "600", marginBottom: "12px" }}>Want to work together?</h2>
-          <p style={{ color: "#44403C", marginBottom: "24px", fontSize: "16px" }}>I'm open to cybersecurity roles, freelance web projects, and technical collaborations.</p>
+          <p style={{ color: "#44403C", marginBottom: "24px", fontSize: "16px" }}>I&apos;m open to cybersecurity roles, freelance web projects, and technical collaborations.</p>
           <Link href="/contact" style={{ backgroundColor: "#0F766E", color: "#FFFFFF", padding: "13px 26px", borderRadius: "8px", fontSize: "15px", fontWeight: "600", textDecoration: "none" }}>Get in touch</Link>
         </section>
       </Reveal>

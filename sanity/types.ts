@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@portabletext/react";
+
 export interface Post {
   _id: string;
   title: string;
@@ -10,5 +12,5 @@ export interface Post {
     asset: { _ref: string };
     hotspot?: { x: number; y: number };
   };
-  body?: any[];
+  body?: PortableTextBlock[];
 }

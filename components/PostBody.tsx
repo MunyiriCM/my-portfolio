@@ -1,5 +1,6 @@
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
+import type { PortableTextBlock } from "@portabletext/react";
 
 // Sanity image references look like: image-<id>-<width>x<height>-<format>
 function imageInfo(ref: string) {
@@ -117,6 +118,6 @@ const components: PortableTextComponents = {
   },
 };
 
-export default function PostBody({ value }: { value: any[] }) {
+export default function PostBody({ value }: { value: PortableTextBlock[] }) {
   return <PortableText value={value} components={components} />;
 }

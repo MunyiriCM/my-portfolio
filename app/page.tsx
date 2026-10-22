@@ -145,7 +145,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 1, maxWidth: "896px", margin: "0 auto", padding: "160px 24px 100px", width: "100%", boxSizing: "border-box" }}>
           <p style={eyebrowStyle}>Based in Nairobi, Kenya</p>
           <h1 style={{ color: "#1C1917", fontSize: "3.2rem", fontWeight: "700", marginBottom: "26px", lineHeight: "1.15", maxWidth: "700px" }}>
-            Hi, I'm Mark Ciira
+            Hi, I&apos;m Mark Ciira
           </h1>
           <p style={{ color: "#44403C", fontSize: "19px", marginBottom: "38px", maxWidth: "590px", lineHeight: "1.8" }}>
             Cyber security analyst, trainer and developer. I protect systems in a regulated banking environment, teach cybersecurity, and build web applications.
@@ -261,7 +261,7 @@ export default function Home() {
 
         <Reveal>
           <section style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E4DD", borderRadius: "16px", padding: "56px 48px", textAlign: "center" }}>
-            <h2 style={{ color: "#1C1917", fontSize: "1.9rem", fontWeight: "600", marginBottom: "14px" }}>Let's work together</h2>
+            <h2 style={{ color: "#1C1917", fontSize: "1.9rem", fontWeight: "600", marginBottom: "14px" }}>Let&apos;s work together</h2>
             <p style={{ color: "#44403C", maxWidth: "420px", margin: "0 auto 28px", lineHeight: "1.7", fontSize: "16px" }}>
               Open to cybersecurity roles, freelance web development projects, and technical collaborations.
             </p>

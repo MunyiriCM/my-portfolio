@@ -1,3 +1,5 @@
+import type { Rule } from "sanity";
+
 export const postSchema = {
   name: "post",
   title: "Blog Post",
@@ -7,20 +9,20 @@ export const postSchema = {
       name: "title",
       title: "Title",
       type: "string",
-      validation: (rule: any) => rule.required(),
+      validation: (rule: Rule) => rule.required(),
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "title", maxLength: 96 },
-      validation: (rule: any) => rule.required(),
+      validation: (rule: Rule) => rule.required(),
     },
     {
       name: "publishedAt",
       title: "Published At",
       type: "datetime",
-      validation: (rule: any) => rule.required(),
+      validation: (rule: Rule) => rule.required(),
     },
     {
       name: "readTime",
