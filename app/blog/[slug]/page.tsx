@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/sanity/queries";
 import { Post } from "@/sanity/types";
 import ShareButtons from "@/components/ShareButtons";
+import PostBody from "@/components/PostBody";
 import Reveal from "@/components/Reveal";
 
 export const revalidate = 60;
@@ -33,19 +34,6 @@ function formatDate(dateStr: string): string {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
-}
-
-function renderBody(body: any[]) {
-  return body.map((block, i) => {
-    if (block._type === "block") {
-      const text = block.children?.map((child: any) => child.text).join("") ?? "";
-      if (block.style === "h2") return <h2 key={i} style={{ color: "#1C1917", fontSize: "1.6rem", fontWeight: "600", margin: "34px 0 14px" }}>{text}</h2>;
-      if (block.style === "h3") return <h3 key={i} style={{ color: "#1C1917", fontSize: "1.3rem", fontWeight: "600", margin: "26px 0 10px" }}>{text}</h3>;
-      if (!text) return <br key={i} />;
-      return <p key={i} style={{ color: "#2D2A26", fontSize: "18px", lineHeight: "1.95", marginBottom: "18px" }}>{text}</p>;
-    }
-    return null;
   });
 }
 
@@ -88,13 +76,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </header>
       </Reveal>
 
-      <Reveal>
-        <article>
-          {post.body ? renderBody(post.body) : (
-            <p style={{ color: "#2D2A26", fontSize: "18px", lineHeight: "1.95" }}>No content yet.</p>
-          )}
-        </article>
-      </Reveal>
+      <article>
+        {post.body ? (
+          <PostBody value={post.body} />
+        ) : (
+          <p style={{ color: "#2D2A26", fontSize: "18px", lineHeight: "1.95" }}>No content yet.</p>
+        )}
+      </article>
 
       <ShareButtons url={postUrl} title={post.title} slug={post.slug.current} />
 
